@@ -1,27 +1,37 @@
-import dotenv from 'dotenv'; // Required for loading environment variables
+import dotenv from 'dotenv';
 import express from 'express';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
-// Load environment variables from .env file
+// Load environment variables
 dotenv.config();
 
-// Import the routes
-import routes from './routes/index.js';
+// Get current filename and directory name
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-// Initialize the Express app
+// Resolve the absolute path to the client/dist folder
+const clientPath = path.join(__dirname, '../../client/dist'); // Correct path to client/dist
+
+console.log(`Client path resolved to: ${clientPath}`); // Log path
+
 const app = express();
-
 const PORT = process.env.PORT || 3001;
 
-// TODO: Serve static files from the client dist folder
-app.use(express.static(path.join(__dirname, '../client/dist')));
+// Serve static files from client/dist
+app.use(express.static(clientPath));
 
-// TODO: Middleware for parsing JSON and urlencoded form data
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-// TODO: Middleware to connect the routes
-app.use(routes);
+// Fallback route: Serve index.html for any unmatched routes
+app.get('*', (_req, res) => {  // Use _req to avoid unused parameter warning
+    const indexPath = path.join(clientPath, 'index.html');
+    console.log(`Sending file: ${indexPath}`); // Log file path
+    res.sendFile(indexPath, (err) => {
+        if (err) {
+            console.error('Error sending index.html:', err);
+            res.status(500).send('Internal Server Error');
+        }
+    });
+});
 
 // Start the server
 app.listen(PORT, () => console.log(`Listening on PORT: ${PORT}`));
