@@ -43,10 +43,7 @@ class WeatherService {
     };
   }
 
-  // TODO: Create buildGeocodeQuery method
-  private buildGeocodeQuery(city: string): string {
-    return `${this.baseURL}/weather?q=${city}&appid=${this.apiKey}&units=metric`;
-  }
+  // Removed unused buildGeocodeQuery method
 
   // TODO: Create buildWeatherQuery method
   private buildWeatherQuery(coordinates: Coordinates): string {
@@ -79,15 +76,16 @@ class WeatherService {
   }
 
   // TODO: Complete buildForecastArray method
-  private buildForecastArray(currentWeather: Weather, weatherData: any[]): Weather[] {
-    return weatherData.map((item: any) => {
-      return new Weather(
-        item.main.temp,
-        item.weather[0].description,
-        item.weather[0].icon
-      );
-    });
-  }
+  // private _buildForecastArray(_currentWeather: Weather, weatherData: any[]): Weather[] {
+  //   return weatherData.map((item: any) => {
+  //     return new Weather(
+  //       item.main.temp,
+  //       item.weather[0].description,
+  //       item.weather[0].icon
+  //     );
+  //   });
+  // }
+  
 
   // TODO: Complete getWeatherForCity method
   async getWeatherForCity(city: string): Promise<Weather> {
