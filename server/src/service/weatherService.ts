@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
 import fetch from 'node-fetch'; // Import fetch for making API requests
-import { City } from './historyService.js'; // Assuming City is defined in historyService.ts
+// import { City } from './historyService.js'; // Assuming City is defined in historyService.ts
 
 dotenv.config();
 
