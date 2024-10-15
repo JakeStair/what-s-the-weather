@@ -1,5 +1,10 @@
 import fs from 'fs/promises'; // Import the fs module for file operations
+import { fileURLToPath } from 'url'; // Import fileURLToPath from url module
 import path from 'path'; // Import path module to handle file paths
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 
 // TODO: Define a City class with name and id properties
 class City {

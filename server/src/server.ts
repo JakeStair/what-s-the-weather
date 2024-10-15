@@ -5,7 +5,7 @@ import express from 'express';
 dotenv.config();
 
 // Import the routes
-import routes from './routes/index';
+import routes from './routes/index.js';
 
 // Initialize the Express app
 const app = express();
