@@ -9,9 +9,9 @@ const __dirname = path.dirname(__filename); // Get the directory name of the cur
 const router = Router(); // Create a new router instance
 
 // Serve index.html located in the client folder when the root URL is accessed
-router.get('/', (_req: Request, res: Response) => {
+router.get('*', (_req: Request, res: Response) => {
     // Adjusted path to point to index.html
-    res.sendFile(path.join(__dirname, '../../client/dist/index.html'));
+    res.sendFile(path.join(__dirname, '../../../client/dist/index.html'));
 });
 
 // Export the router to use in the main server file

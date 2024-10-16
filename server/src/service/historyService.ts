@@ -1,9 +1,4 @@
 import fs from 'fs/promises'; // Import the fs module for file operations
-import { fileURLToPath } from 'url'; // Import fileURLToPath from url module
-import path from 'path'; // Import path module to handle file paths
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 
 // TODO: Define a City class with name and id properties
@@ -17,7 +12,7 @@ class HistoryService {
 
   constructor() {
     // Set the file path to the current directory plus the searchHistory.json filename
-    this.filePath = path.join(__dirname, 'searchHistory.json');
+    this.filePath = 'db/db.json';
   }
 
   // TODO: Define a read method that reads from the searchHistory.json file

@@ -39,6 +39,7 @@ class WeatherService {
     }
 
     const data = await response.json();
+    console.log('Location data:', data); // Log the data being fetched
     return this.extractCoordinates(data);
   }
 
@@ -63,14 +64,16 @@ class WeatherService {
     }
 
     const data = await response.json();
+    console.log('Weather data:', data); // Log the data being fetched
     return this.parseWeatherData(data);
   }
 
   private parseWeatherData(data: any): Weather {
+    console.log('Parsed data:', data); // Log the data being parsed
     return new Weather(
-      data.main.temp,
-      data.weather[0].description,
-      data.weather[0].icon
+      data.main?.temp || 0,
+      data.weather[0].description || 'No description',
+      data.weather[0]?.icon || ''
     );
   }
 
