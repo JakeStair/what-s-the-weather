@@ -10,6 +10,7 @@
 - [API Calls](#api-calls)
 - [Deployment](#deployment)
 - [Contributing](#contributing)
+- [Contributors](#contributors)
 - [License](#license)
 
 ## Description
@@ -70,6 +71,12 @@ The application is deployed on Render. You can access the live application at [y
 
 ## Contributing
 Contributions are welcome! If you have suggestions for improvements, please fork the repository and create a pull request.
+
+## Contributors
+- Jake Watson
+- Martha Watson(Peer): API intergration, debugging, peer support.
+- Nick S(BootCamp tutor): Debugging and mentorship.
+- David Park(BootCamp tutor): Debugging and mentorship.
 
 ## License
 This project is licensed under the [MIT](https://opensource.org/licenses/MIT) license.
