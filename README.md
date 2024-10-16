@@ -2,8 +2,6 @@
 
 ## Table of Contents
 - [Description](#description)
-- [User Story](#user-story)
-- [Acceptance Criteria](#acceptance-criteria)
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -15,22 +13,6 @@
 
 ## Description
 The Weather Dashboard application allows users to view the current and future weather conditions for multiple cities. Utilizing the OpenWeather API, the application fetches weather data based on user input, displays current weather conditions, and provides a 5-day forecast. Users can also access their search history for easy reference.
-
-## User Story
-AS A traveler  
-I WANT to see the weather outlook for multiple cities  
-SO THAT I can plan a trip accordingly.
-
-## Acceptance Criteria
-- GIVEN a weather dashboard with form inputs
-  - WHEN I search for a city
-    - THEN I am presented with current and future conditions for that city, and that city is added to the search history.
-- WHEN I view current weather conditions for that city
-  - THEN I am presented with the city name, the date, an icon representation of weather conditions, a description of the weather for the icon's `alt` tag, the temperature, the humidity, and the wind speed.
-- WHEN I view future weather conditions for that city
-  - THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity.
-- WHEN I click on a city in the search history
-  - THEN I am again presented with current and future conditions for that city.
 
 ## Technologies Used
 - HTML
