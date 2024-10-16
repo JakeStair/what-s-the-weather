@@ -6,23 +6,19 @@ const router = Router(); // Create a new router instance
 
 // TODO: POST Request with city name to retrieve weather data
 router.post('/', async (req, res) => {
-    // Extract city name from request body
+    console.log('Received POST request with body:', req.body); // Log the request body
     const city = req.body.city;
 
     try {
-        // Get weather data from city name
         const weatherData = await WeatherService.getWeatherForCity(city);
-        
-        // Save city to search history
         await HistoryService.addCity(city);
-        
-        // Send the weather data back as the response
         res.json(weatherData);
     } catch (error) {
-        // Handle errors, send a 500 response with an error message
+        console.error('Error fetching weather data:', error); // Log any error
         res.status(500).json({ error: 'An error occurred while fetching weather data.' });
     }
 });
+
 
 // TODO: GET search history
 router.get('/history', async (_req, res) => {

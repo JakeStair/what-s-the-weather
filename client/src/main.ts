@@ -249,19 +249,27 @@ Event Handlers
 
 */
 
-const handleSearchFormSubmit = (event: any): void => {
+const handleSearchFormSubmit = async (event: Event): Promise<void> => {
   event.preventDefault();
 
   if (!searchInput.value) {
-    throw new Error('City cannot be blank');
+    console.error('City cannot be blank');
+    return; // Early return if the input is empty
   }
 
   const search: string = searchInput.value.trim();
-  fetchWeather(search).then(() => {
-    getAndRenderHistory();
-  });
-  searchInput.value = '';
+  
+  try {
+    await fetchWeather(search); // Await the fetchWeather to ensure it completes
+    getAndRenderHistory(); // Call history after fetch
+  } catch (error) {
+    console.error('Error fetching weather:', error); // Log any errors
+  }
+  
+  searchInput.value = ''; // Clear input after handling
 };
+
+
 
 const handleSearchHistoryClick = (event: any) => {
   if (event.target.matches('.history-btn')) {
