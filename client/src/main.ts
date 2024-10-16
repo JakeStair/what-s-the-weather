@@ -53,14 +53,13 @@ const fetchWeather = async (cityName: string): Promise<void> => {
     }
 
     const weatherData: (WeatherData | ForecastData)[] = await response.json();
-
-    console.log('weatherData: ', weatherData);
+    console.log('Fetched weatherData:', weatherData); // Log the fetched data
 
     if (weatherData.length > 0) {
       if ('city' in weatherData[0]) {
         renderCurrentWeather(weatherData[0] as WeatherData);
       }
-      renderForecast(weatherData.slice(1));
+      renderForecast(weatherData.slice(1)); // This assumes forecast data follows
     } else {
       console.error('No weather data found');
     }
@@ -68,6 +67,8 @@ const fetchWeather = async (cityName: string): Promise<void> => {
     console.error('Error fetching weather:', error);
   }
 };
+
+
 
 const fetchSearchHistory = async (): Promise<Response> => {
   return await fetch('/api/weather/history', {
