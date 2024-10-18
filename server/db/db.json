@@ -5,58 +5,10 @@
   },
   {
     "id": "2",
-    "name": "New York"
+    "name": "Miami"
   },
   {
     "id": "3",
-    "name": "Seattle"
-  },
-  {
-    "id": "4",
-    "name": "Seattle"
-  },
-  {
-    "id": "5",
     "name": "New York"
-  },
-  {
-    "id": "6",
-    "name": "New York"
-  },
-  {
-    "id": "7",
-    "name": "San Diego"
-  },
-  {
-    "id": "8",
-    "name": "Seattle"
-  },
-  {
-    "id": "9",
-    "name": "New York"
-  },
-  {
-    "id": "10",
-    "name": "Los Angeles"
-  },
-  {
-    "id": "11",
-    "name": "Los Angeles"
-  },
-  {
-    "id": "12",
-    "name": "Los Angeles"
-  },
-  {
-    "id": "13",
-    "name": "Miami"
-  },
-  {
-    "id": "14",
-    "name": "Miami"
-  },
-  {
-    "id": "15",
-    "name": "Miami"
   }
 ]

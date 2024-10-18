@@ -8,11 +8,32 @@ interface Coordinates {
 }
 
 class Weather {
+  public city: string
+  public date: Date
+  public icon: string
+  public iconDescription: string
+  public tempF: number
+  public windSpeed: number
+  public humidity: number
+
+
   constructor(
-    public temperature: number,
-    public description: string,
-    public icon: string
-  ) {}
+    city: string,
+    date: Date,
+    icon: string,
+    iconDescription: string,
+    tempF: number,
+    windSpeed: number,
+    humidity: number,
+
+  ) {this.city = city; 
+    this.date = date; 
+    this.icon = icon; 
+    this.iconDescription = iconDescription; 
+    this.tempF = tempF; 
+    this.windSpeed = windSpeed; 
+    this.humidity = humidity;
+  }
 }
 
 class WeatherService {
@@ -54,7 +75,7 @@ class WeatherService {
     return `${this.baseURL}/weather?lat=${lat}&lon=${lon}&appid=${this.apiKey}&units=metric`;
   }
 
-  private async fetchWeatherData(coords: Coordinates): Promise<Weather> {
+  private async fetchWeatherData(coords: Coordinates): Promise<[Weather]> {
     const url = this.buildWeatherQuery(coords);
     console.log('Fetching weather data from:', url); // Log the URL being fetched
     const response = await fetch(url);
@@ -68,16 +89,12 @@ class WeatherService {
     return this.parseWeatherData(data);
   }
 
-  private parseWeatherData(data: any): Weather {
+  private parseWeatherData(data: any): [Weather] {
     console.log('Parsed data:', data); // Log the data being parsed
-    return new Weather(
-      data.main?.temp || 0,
-      data.weather[0].description || 'No description',
-      data.weather[0]?.icon || ''
-    );
+    return [new Weather(data.name, new Date(data.dt), data.weather[0].icon, data.weather[0].description, data.main.temp, data.wind.speed, data.main.humidity)];
   }
 
-  public async getWeatherForCity(city: string): Promise<Weather> {
+  public async getWeatherForCity(city: string): Promise<[Weather]> {
     try {
       const coords = await this.fetchLocationData(city);
       return await this.fetchWeatherData(coords);
