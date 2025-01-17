@@ -1,14 +1,34 @@
 [
   {
     "id": "1",
-    "name": "San Diego"
-  },
-  {
-    "id": "2",
-    "name": "Miami"
+    "name": "miami"
   },
   {
     "id": "3",
-    "name": "New York"
+    "name": "San Diego"
+  },
+  {
+    "id": "3",
+    "name": "miami"
+  },
+  {
+    "id": "4",
+    "name": "miami"
+  },
+  {
+    "id": "5",
+    "name": "miami"
+  },
+  {
+    "id": "6",
+    "name": "miami"
+  },
+  {
+    "id": "7",
+    "name": "miami"
+  },
+  {
+    "id": "8",
+    "name": "miami"
   }
 ]

@@ -1,16 +1,35 @@
 import './styles/jass.css';
 
 // * All necessary DOM elements selected
-const searchForm: HTMLFormElement = document.getElementById('search-form') as HTMLFormElement;
-const searchInput: HTMLInputElement = document.getElementById('search-input') as HTMLInputElement;
-const todayContainer = document.querySelector('#today') as HTMLDivElement;
-const forecastContainer = document.querySelector('#forecast') as HTMLDivElement;
-const searchHistoryContainer = document.getElementById('history') as HTMLDivElement;
-const heading: HTMLHeadingElement = document.getElementById('search-title') as HTMLHeadingElement;
-const weatherIcon: HTMLImageElement = document.getElementById('weather-img') as HTMLImageElement;
-const tempEl: HTMLParagraphElement = document.getElementById('temp') as HTMLParagraphElement;
-const windEl: HTMLParagraphElement = document.getElementById('wind') as HTMLParagraphElement;
-const humidityEl: HTMLParagraphElement = document.getElementById('humidity') as HTMLParagraphElement;
+const searchForm: HTMLFormElement = 
+document.getElementById('search-form') as HTMLFormElement;
+
+const searchInput: HTMLInputElement = 
+document.getElementById('search-input') as HTMLInputElement;
+
+const todayContainer = 
+document.querySelector('#today') as HTMLDivElement;
+
+const forecastContainer = 
+document.querySelector('#forecast') as HTMLDivElement;
+
+const searchHistoryContainer = 
+document.getElementById('history') as HTMLDivElement;
+
+const heading: HTMLHeadingElement = 
+document.getElementById('search-title') as HTMLHeadingElement;
+
+const weatherIcon: HTMLImageElement = 
+document.getElementById('weather-img') as HTMLImageElement;
+
+const tempEl: HTMLParagraphElement = 
+document.getElementById('temp') as HTMLParagraphElement;
+
+const windEl: HTMLParagraphElement = 
+document.getElementById('wind') as HTMLParagraphElement;
+
+const humidityEl: HTMLParagraphElement = 
+document.getElementById('humidity') as HTMLParagraphElement;
 
 // Define types for WeatherData and ForecastData
 interface WeatherData {
